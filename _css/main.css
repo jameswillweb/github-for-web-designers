@@ -76,25 +76,26 @@
  
 /* color palette*/
 /*
-dark gray blue: rgb(39,47,50) , #272F32;
-french blue: rgb(157,189,198), #9DBDC6;
+dark blue: rgb(34,33,48) , #222130;
+dark gray: rgb(70,77,87), #464D57;
 burnt umber: rgb(127,64,45), #7F402D;
-white;
-bright red: rgb(255,61,46), #FF3D2E;
-accent gray: rgb(218,234,239), #DAEAEF;
+orange: rgb(237,137,23), #ED8917;
+accent orange: rgb(255,182,101), #FFB665;
+accent green: rgb(212,232,211), #D4E8D3;
+off white: rgb(255,252,251), #FFFCFB;
 */
 
 
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: rgb(39,47,50);
+  background: rgb(34,33,48);
 }
 html, body  {
 	margin: 0;
 }
 body {
-	background: white;
+	background: rgb(255,252,251);
 	margin: 0 auto;
 	width: 70%;
 	font-family: bitter, Georgia, serif;
@@ -104,7 +105,7 @@ body {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	color: rgb(39,47,50);
+	color: rgb(70,77,87);
 }
 /* Correct `block` display not defined in IE 8/9.*/
 article,aside,details,figcaption,figure,footer,header,main,nav,section,summary {
@@ -129,7 +130,7 @@ h1,h2,h3,h4,h5,h6,p {
 }
 h4 {
 	margin-bottom: 0;
-	color: rgb(255,61,46);
+	color: rgb(237,137,23);
 }
 
 /* base elements
@@ -138,6 +139,8 @@ h4 {
 a {
   background: transparent;
   color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed;
 }
 a.img, a.img:hover {
 	border: none;
@@ -146,8 +149,8 @@ a.img, a.img:hover {
 a:active,
 a:hover {
   outline: 0;
-  text-decoration:none;
-  background: rgb(218,234,239);
+  border: none;
+  background: rgb(255,182,101);
 }
 
 /*Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.*/
@@ -214,12 +217,12 @@ header,main,footer {
 	padding: 0 2em;
 }
 header {
-	 border-bottom:1px solid rgb(157,189,198);
+	 border-bottom:1px solid rgb(127,64,45);
 	 margin-bottom: 1em;
-	 background: rgb(218,234,239);
+	 background: rgb(237,137,23);
  }
 header h1 {
-	 color: rgb(127,64,45);
+	 color: rgb(255,252,251);
 	 padding-top: 1em;
  }
 
@@ -235,9 +238,17 @@ header h1 {
 	 font-weight: bold;
  }
  footer {
-	 background: rgb(157,189,198);
+	 background: rgb(212,232,211);
 	 padding: 2em;
 	 font-size: 0.8em;
+ }
+ .license {
+	 font-size: 0.8em;
+ }
+ .license img {
+	 display:block;
+	 margin-top: 1em;
+	 border: 0;
  }
 
 /* Forms
