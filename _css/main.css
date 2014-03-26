@@ -220,7 +220,6 @@ header,main,footer {
 }
 header {
 	 border-bottom:1px solid rgb(127,64,45);
-	 margin-bottom: 1em;
 	 background: rgb(4,99,128);
 	 text-align: center;
  }
@@ -235,6 +234,9 @@ header h1 {
 	 color: rgb(255,252,251);
 	 padding-top: 1em;
  }
+nav {
+	margin-bottom: 1.4em;
+}
 nav ul {
 	list-style: none;
 }
@@ -249,6 +251,7 @@ nav a {
 	font-weight: bold;
 	display: block;
 	border: none;
+	margin-bottom:0.5em;
 }
 nav a:hover {
 	background: none;
@@ -371,4 +374,53 @@ textarea {
 }
 .inline-block {
 	display: inline-block;
+}
+/* Media queries
+   ========================================================================== */
+   
+/*   header */
+@media only screen and (max-width : 60em) {
+	 span[data-icon]:before {
+	display:block;
+	margin-bottom: 0.2em;
+    }
+	
+	header h1 {
+		font-size: 1.4em;
+}
+}
+/*  navigation */
+@media only screen and (min-width : 48em) {
+nav {
+	margin-bottom: 1.4em;
+	background:rgb(237,137,23);
+	height: 3em;
+	padding: 0.2em 0;
+}
+nav ul {
+	list-style: none;
+}
+nav ul, nav li {
+	margin: 0;
+	padding: 0;
+}
+nav li {
+	float:left;
+}
+nav a {
+	font-size:1.4em;
+	color: rgb(255,252,251);
+	display: block;
+	border: none;
+	line-height:2;
+	font-weight:normal;
+	margin-left: 2em;
+}
+nav a.current {
+	color: rgb(34,33,48);
+}
+nav a:hover {
+	background: none;
+	color: rgb(34,33,48);
+}
 }
