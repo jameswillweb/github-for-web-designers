@@ -378,8 +378,12 @@ textarea {
 /* Media queries
    ========================================================================== */
    
-/*   header */
+/*   header & body */
 @media only screen and (max-width : 60em) {
+	 body {
+		 width: 100%;
+		 margin: 0;
+	 }
 	 span[data-icon]:before {
 	display:block;
 	margin-bottom: 0.2em;
