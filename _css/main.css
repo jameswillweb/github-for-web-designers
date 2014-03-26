@@ -378,20 +378,26 @@ textarea {
 /* Media queries
    ========================================================================== */
    
-/*   header & body */
+/*  smaller screens */
 @media only screen and (max-width : 60em) {
-	 body {
+body {
 		 width: 100%;
 		 margin: 0;
 	 }
-	 span[data-icon]:before {
+span[data-icon]:before {
 	display:block;
 	margin-bottom: 0.2em;
-    }
-	
-	header h1 {
+    }	
+header h1 {
 		font-size: 1.4em;
 }
+pre {
+	font-size: 1em;
+}
+dd {
+	padding: 0;
+	margin-left: 0;
+	margin-bottom: 0.6em;
 }
 /*  navigation */
 @media only screen and (min-width : 48em) {
