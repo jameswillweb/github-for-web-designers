@@ -76,7 +76,8 @@
  
 /* color palette*/
 /*
-dark blue: rgb(34,33,48) , #222130;
+dark blue: rgb(34,33,48), #222130;
+med blue: rgb(4,99,128), #046380
 dark gray: rgb(70,77,87), #464D57;
 burnt umber: rgb(127,64,45), #7F402D;
 orange: rgb(237,137,23), #ED8917;
@@ -89,7 +90,7 @@ off white: rgb(255,252,251), #FFFCFB;
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: rgb(34,33,48);
+  background: rgb(4,99,128);
 }
 html, body  {
 	margin: 0;
@@ -193,6 +194,7 @@ pre {
 	white-space: -o-pre-wrap;  
 	word-wrap: break-word;
 	overflow: auto;
+	margin-bottom: 0.2em;
 }
 /* Icons
  ========================================================================*/
@@ -219,13 +221,38 @@ header,main,footer {
 header {
 	 border-bottom:1px solid rgb(127,64,45);
 	 margin-bottom: 1em;
-	 background: rgb(237,137,23);
+	 background: rgb(4,99,128);
+	 text-align: center;
  }
+header a {
+	border: none;
+}
+
+header a:hover {
+	background: none;
+}
 header h1 {
 	 color: rgb(255,252,251);
 	 padding-top: 1em;
  }
-
+nav ul {
+	list-style: none;
+}
+nav ul, nav li {
+	margin: 0;
+	padding: 0;
+}
+nav a {
+	text-align: center;
+	font-size:1.4em;
+	color: rgb(4,99,128);
+	font-weight: bold;
+	display: block;
+	border: none;
+}
+nav a:hover {
+	background: none;
+}
  main h2 {
 	 margin-top: 0.2em;
 	 margin-bottom: 0.5em;
@@ -234,13 +261,23 @@ header h1 {
 	 margin-top: 0.2em;
 	 margin-bottom: 0;
  }
+ main h4 {
+	 margin-top: 0.5em;
+ }
  main dt {
 	 font-weight: bold;
+ }
+ .glossary dd {
+	 margin-bottom:1.4em;
+ }
+ pre + p {
+	 margin-bottom: 2em;
  }
  footer {
 	 background: rgb(212,232,211);
 	 padding: 2em;
 	 font-size: 0.8em;
+	 margin-top:1em;
  }
  .license {
 	 font-size: 0.8em;
