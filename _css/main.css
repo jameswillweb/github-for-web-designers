@@ -387,16 +387,14 @@ body {
 span[data-icon]:before {
 	display:block;
 	margin-bottom: 0.2em;
-    }
-	
+    }	
 header h1 {
 		font-size: 1.4em;
 }
 pre {
 	font-size: 1em;
 }
-
-dt {
+dd {
 	padding: 0;
 	margin-left: 0;
 }
