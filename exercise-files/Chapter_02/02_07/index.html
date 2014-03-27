@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>lynda boilerplate</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="_css/main.css">
+        <script src="_scripts/modernizr-custom.js"></script>
+    </head>
+    <body>
+    <header>
+	<h1>Page title</h1>
+    </header>
+    <nav id="pageNav">
+    </nav>
+    <main>
+    </main>
+    <footer>
+    </footer>
+        <script>
+//use the modernizr load to load up external scripts. This will load the scripts asynchronously, but the order listed matters. Although it will load all scripts in parallel, it will execute them in the order listed
+Modernizr.load([
+{
+    load: [  
+		//for local testing, for distribution remove the protocol and let Google resolve
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
+		'_scripts/scripts.js' 
+		//additional scripts can be loaded here, separate with a comma in the order you wish them to execute 
+    ]
+},
+{
+	// test for media query support, if not load respond.js
+    test : Modernizr.mq('only all'),
+    // If not, load the respond.js file
+    nope : 'js/respond.min.js' 
+}
+]); 
+</script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Learning Github</title>
+        <meta name="description" content="Github for Web Designers is the companion reference for the lynda.com course of the same name">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="_css/main.css">
+        <script src="_scripts/modernizr-custom.js"></script>
+    </head>
+    <body>
+    <header>
+	<h1><span aria-hidden="true" data-icon="&#xE087;" class="github-icon"></span> Github for Web Designers</h1>
+    </header>
+    <nav id="pageNav" role="navigation">
+        <ul>
+    <li><a href="index.html" title="concepts">Concepts</a></li>
+    <li><a href="reference.html" title="Git reference">Reference</a></li>
+    <li><a href="glossary.html" title="glossary">Glossary</a></li>
+    <li><a href="resources.html" title="resources" class="current">Resources</a></li>
+    </ul>
+    </nav>
+    <main>
+    <h2>Resources</h2>
+    <p>Here are a few links to additional resources that can help deepen your understanding of Github and serve as a reference for you as you learn it.</p>
+    <h3>Courses &amp; Online Books</h3>
+        <h4><a href="http://www.lynda.com/Git-tutorials/Git-Essential-Training/100222-2.html?srchtrk=index:1
+linktypeid:2
+q:git
+page:1
+s:relevance
+sa:true
+producttypeid:2" title="Git Essential Training"><strong>Git Essential Training</strong> - <em>Kevin Skoglund</em></a></h4>
+    <p>Deep dive into Git with step-by-step exercises</p>
+    <h4><a href="http://git-scm.com/book" title="Pro Git"><strong>Pro Git</strong> - <em>Scott Chacon</em></a></h4>
+    <p>Online version of Scott's authoritative book on Git.</p>
+    <h3>Online Articles &amp; Tutorials</h3>
+        <h4><a href="https://www.atlassian.com/git/tutorial" title="Git Tutorial"><strong>Git Tutorials</strong> - <em>Atlassian</em></a></h4>
+    <p>Clearn, concise tutorials on Git.</p>
+            <h4><a href="http://warpspire.com/posts/designing-github-mac/" title="Designing Github for Mac"><strong>Designing Github for Mac</strong> - <em>Kyle Neath</em></a></h4>
+    <p>Fantastic article about the design decisions made when creating the Mac Github Client. Offers insight into how the client works and perceived workflows.</p>
+    <h4><a href="http://betterexplained.com/articles/aha-moments-when-learning-git/" title="Aha Moments when learning Git"><strong>Aha! Moments When Learning Git</strong> - <em>Kalid Azad</em></a></h4>
+    <p>Great article that focuses on the concepts important to fully understanding Git.</p>
+    <h3>References &amp; Cheatsheets</h3>
+        <h4><a href="https://help.github.com/" title="Github help"><strong>Github help</strong></a></h4>
+        <h4><a href="https://help.github.com/articles/github-glossary" title="Github glossary"><strong>Github Glossary</strong></a></h4>
+        <h4><a href="http://git-scm.com/docs" title="Git Reference"><strong>Official Git reference</strong></a></h4>
+        <h4><a href="http://gitref.org/" title="Git Reference"><strong>Quick Git reference</strong></a></h4>
+        <h4><a href="http://jonas.nitro.dk/git/quick-reference.html" title="Git Cheatsheet"><strong>Git Cheatsheet</strong></a></h4>
+    </main>
+    <footer>
+    <p>&copy; James Williamson &amp; <a href="http://www.lynda.com" title="lynda.com">lynda.com</a></p>
+    <p class="license"><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Github for Web Designers</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.lynda.com" property="cc:attributionName" rel="cc:attributionURL">James Williamson</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="img"><br /><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
+    </footer>
+        <script>
+//use the modernizr load to load up external scripts. This will load the scripts asynchronously, but the order listed matters. Although it will load all scripts in parallel, it will execute them in the order listed
+Modernizr.load([
+{
+    load: [  
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
+		'_scripts/scripts.js' 
+		//additional scripts can be loaded here, separate with a comma in the order you wish them to execute 
+    ]
+},
+{
+	// test for media query support, if not load respond.js
+    test : Modernizr.mq('only all'),
+    // If not, load the respond.js file
+    nope : '_scripts/respond.min.js' 
+}
+]); 
+</script>
+    </body>
+</html>

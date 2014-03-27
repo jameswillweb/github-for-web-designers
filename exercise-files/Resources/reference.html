@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Learning Github</title>
+        <meta name="description" content="Github for Web Designers is the companion reference for the lynda.com course of the same name">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="_css/main.css">
+        <script src="_scripts/modernizr-custom.js"></script>
+    </head>
+    <body>
+    <header>
+	<h1><span aria-hidden="true" data-icon="&#xE087;" class="github-icon"></span> Github for Web Designers</h1>
+    </header>
+    <nav id="pageNav" role="navigation">
+    <ul>
+    <li><a href="index.html" title="concepts">Concepts</a></li>
+    <li><a href="reference.html" title="Git reference" class="current">Reference</a></li>
+    <li><a href="glossary.html" title="glossary">Glossary</a></li>
+    <li><a href="resources.html" title="resources">Resources</a></li>
+    </ul>
+    </nav>
+    <main>
+    <h2>Git Quick Reference</h2>
+    <p>As I was learning Git one of the things that frustrated me the most was how references and tutorials would either assume you would know exactly what a command meant or would simply show you a command to enter without explaining what it was doing. Because of this I wanted it to create a quick reference for common Git commands. This list is by no means exhaustive, but it should provide you with a solid reference to the most common commands you encounter.</p>
+    <h3>Installation</h3>
+    <p>Helpful installation links. I recommend installing the Github Client. Not only does it give you an intuitive GUI interface for common Git tasks, it also does a stable installation of Git as well. For Windows it installs a shell emulator that gives you access to the command line. On the Mac be sure to choose to install the Command Line tools as part of the client install. Without them some path references might not resolve.</p>
+    <p><a href="http://git-scm.com/download/mac" title="Install Git for Mac">Git installer for Mac</a></p>
+    <p><a href="http://git-scm.com/download/win" title="Git installer for Windows">Git installer for Windows</a></p>
+    <p><a href="http://mac.github.com/" title="Github for Mac">Gitub Client for Mac</a></p>
+    <p><a href="http://windows.github.com/" title="Github for Windows">Github Client for Windows</a></p>
+    <h3>Setting up Git</h3>
+    <h4>Useful config options</h4>
+    <p>In addition to the global configuration options that Github provides in its getting started article there are some very useful configuration options that you might be interested in.</p>
+    <h5>Config help</h5>
+    <pre><code>git config --help</code></pre>
+    <p>Will list available config options.</p>
+    <h5>Setting the default editor</h5>
+      <pre><code>git config --global core.editor &lt;tool&gt;</code></pre>
+    <p>If you want to use a different editor than Vim or Vi you can set that by adding your tool of choice here.</p>
+    <h4>Global ignore file</h4>
+    <pre><code>git config --global core.excludesfile ~/.gitignore_global</code></pre>
+    <p>.gitignore files can help you decide which files are tracked or not in local repositories. However if you ever want files to be ignored globally across all repositories you can use this command. Just create a plain text file, name it what you&rsquo;d like and point to it after the core.excludesfile command. Here the example &ldquo;.gitignore_global&rdquo; is used. Github has a link to common configurations that can help get you started.</p>
+    <h4>Setting aliases</h4> 
+<pre><code>git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.mr merge</code></pre>
+    <p>If you want to save some time typing, you can create aliases for common commands. After setting these typing in the alias is the same as typing in the command itself. Above is a list of common aliases although you&rsquo;re free to create your own. Simply add the alias you want after the &ldquo;alias.&rdquo; command and then type the command it represents.</p>
+    <h3>Starting a project</h3>
+    <h4>Clone</h4>
+    <p>Copies a repository into a new directory. Usually done to copy a remote directory locally. Unlike fetch, clone copies an entire repository and all its branches, and then sets up tracking for local and remote branches.</p>
+    <pre><code>git clone [url]</code></pre>
+    <p>Where URL points to the remote repository</p>
+    <pre><code>git clone -o [url] &lt;name&gt;</code></pre>
+    <p>Clones a remote repo and changes the named reference from &ldquo;origin&rdquo; to the one you specify.</p>
+    <pre><code>git clone -b [url]&nbsp; &lt;branch&gt;</code></pre>
+    <p>Clones the repo and checks out the named branch locally.</p>
+    <h4>Init</h4>
+    <p>Initializes a new Git repository.</p>
+    <pre><code>git init</code></pre>
+    <p>When run the current directory is initialized as a Git repository.</p>
+    <h3>Staging and committing</h3>
+    <h4>Status</h4>
+    <p>
+      Gives the current status of a repository and its files.</p>
+    <pre><code>git status</code></pre>
+    <p>Displays the current state of the repository</p>
+    <pre><code>git status -s</code></pre>
+    <p>Displays the output in short format.</p>
+    <pre><code>git status -b</code></pre>
+    <p>Displays the branch and tracking info in short format.</p>
+    <pre><code>git status -u</code></pre>
+    <p>Displays untracked files.</p>
+    <h4>Add</h4>
+    <p>Stages files to be committed.</p>
+    <pre><code>git add &lt;path to file&gt;</code></pre>
+    <p>Add the individual file. Additional files may be added by using multiple filenames separated by a single whitespace.</p>
+    <pre><code>git add &lt;directory name&gt;</code></pre>
+    <p>Will add all files in the directory.</p>
+    <pre><code>git add .</code></pre>
+    <p>Adds all untracked and modified files, even those in subdirectories.</p>
+    <pre><code>git add *.txt</code></pre>
+    <p>Wildcards can be used to add all files of a specific type, in this instance text files.</p>
+    <pre><code>git add -f &lt;filename&gt; </code></pre>
+    <p>Force, will add the file specified even if it's contained in a .gitignore file</p>
+    <pre><code>git add -u &lt;filename&gt;</code></pre>
+    <p>Updates a previously staged instance of the file that hasn't yet been committed.</p>
+    <h4>Commit</h4>
+    <p>Creates a snapshot of the current stage and adds it to the projects history.</p>
+    <pre><code>git commit</code></pre>
+    <p>Creates a commit and opens text editor for the commit message.</p>
+    <pre><code>git commit -m &ldquo;message&rdquo;</code></pre>
+    <p>Creates a commit and bypasses the text editor by supplying a short form message.</p>
+    <pre><code>git commit -a</code></pre>
+    <p>Stage and commit all modified and removed files. Does not affect untracked files.</p>
+    <pre><code>git commit --amend</code></pre>
+    <p>Allows you to add staged files to a previous commit. Helpful if you forget to add a file to the previous commit and don&rsquo;t want to add another commit to the history.</p>
+    <h4>Reset</h4>
+    <p>Allows you to revert to earlier commits. How reset works is altered dramatically by the parameters you pass to it. Since space here doesn&rsquo;t allow for a full discussion of that, please see Scott Chacon&rsquo;s article on reset on the <a href="http://git-scm.com/blog/2011/07/11/reset.html" title="More information on the reset command">Git blog</a>.</p>
+    <h4>Diff</h4>
+    <p>Shows changes between commits </p>
+    <pre><code>git diff</code></pre>
+    <p>Will compare the changes in modified files with the last commit. Will not show differences between working directory and staged files.</p>
+    <pre><code>git diff --staged</code></pre>
+    <p>Shows the differences between staged files and the last commit.</p>
+    <h3>Branching &amp; Merging</h3>
+    <h4>Branch</h4>
+    <p>Allows you to list existing branches, create new branches, or delete existing branches</p>
+    <pre><code>git branch</code></pre>
+    <p>Displays a list of existing branches and indicates the current branch.</p>
+    <pre><code>git branch &lt;name&gt;</code></pre>
+    <p>Creates a new branch with the specified name.</p>
+    <pre><code>git commit -b &lt;name&gt;</code></pre>
+    <p>Creates a new branch with the specified name and checks it out so that it is the current branch.</p>
+    <pre><code>git branch -d &lt;name&gt;</code></pre>
+    <p>Deletes branch unless the branch has never been merged.</p>
+    <pre><code>git branch -D &lt;name&gt;</code></pre>
+    <p>Deletes the branch regardless of its merged status.</p>
+    <pre><code>git branch -r</code></pre>
+    <p>List remote branches.</p>
+    <pre><code>git branch --merged</code></pre>
+    <p>Only list branches that have been merged.</p>
+    <pre><code>git branch --no-merged</code></pre>
+    <p>Only list branches that have not been merged.</p>
+    <h4>Checkout</h4>
+    <p>Allows you to switch between branches and load earlier files and commits</p>
+    <pre><code>git checkout &lt;branchname&gt;</code></pre>
+    <p>Switches to the specified branch.</p>
+    <pre><code>git checkout &lt;commit&gt;</code></pre>
+    <p>Detaches the commit and sets to working directory to that snapshot. Changes may be made and then committed, thereby resetting files to an earlier state.</p>
+    <pre><code>git checkout &lt;branch&gt;~[n] </code></pre>
+    <p>Reverts the current commit for that branch to the number specified in [n]. git checkout master~3, for example would reset the index to three commits back for the master branch. You can add specific filenames or directories to the end of this to reset specific files. This detaches the files so they must be recommitted in order to be added to the commit history.</p>
+    <h4>Merge</h4>
+    <p>Joins two or more commits together into a single commit.</p>
+    <pre><code>git merge &lt;branchname&gt;</code></pre>
+    <p>Merges the specified branch into the current branch. Additional branches can be added as a series of space separated branch names.</p>
+    <pre><code>git merge --no-commit &lt;branchname&gt;</code></pre>
+    <p>Merges the specified branches but does not commit the result. This allows you to inspect the merge before you finalize it by committing.</p>
+    <h4>Log</h4>
+    <p>Show commit history</p>
+    <pre><code>git log</code></pre>
+    <p>List commit history</p>
+    <pre><code>git log --no-merges</code></pre>
+    <p>List commit history but ignore merges.</p>
+    <pre><code>git log --pretty=oneline</code></pre>
+    <p>List commit history using short hash identifier and a single line message.</p>
+    <pre><code>git log &lt;file&gt;</code></pre>
+    <p>See all commits that affect the specified file.</p>
+    <h3>Reverting &amp; Resetting</h3>
+    <h4>Checkout</h4>
+    <p>Allows you to switch load earlier files and commits</p>
+    <pre><code>git checkout &lt;commit&gt;</code></pre>
+    <p>Detaches the commit and sets to working directory to that snapshot. Changes may be made and then committed, thereby resetting files to an earlier state.</p>
+    <pre><code>git checkout &lt;branch&gt;~[n] </code></pre>
+    <p>Reverts the current commit for that branch to the number specified in [n]. git checkout master~3, for example would reset the index to three commits back for the master branch. You can add specific filenames or directories to the end of this to reset specific files. This detaches the files so they must be recommitted in order to be added to the commit history.</p>
+    <h4>Reset</h4>
+    <p>Allows you to revert to earlier commits. How reset works is altered dramatically by the parameters you pass to it. Since space here doesn&rsquo;t allow for a full discussion of that, please see Scott Chacon&rsquo;s article on reset on the <a href="http://git-scm.com/blog/2011/07/11/reset.html" title="More information on git reset">Git blog</a>.</p>
+    <h4>Rebase</h4>
+    <p>Flattens commit histories into a linear sequence</p>
+    <pre><code>git rebase &lt;commit&gt;</code></pre>
+    <p>Moves the current branch to the specified commit. The practical result of this is that it creates a linear commit history from multiple branches. Commits within a branch are moved to the end of the current branch. This is typically followed up by a merge which moves the current commit forward to the last added commit.</p>
+    <h3>Working with remote repos</h3>
+    <h4>Remote</h4>
+    <p>Manges remote repositories</p>
+    <pre><code>git remote</code></pre>
+    <p>Lists the currently tracked remote repos</p>
+    <pre><code>git remote add [name] [url]</code></pre>
+    <p>Adds new remote repos. The name establishes an alias for the repo, while the URL establishes the location.</p>
+    <pre><code>git remote -rm [name]</code></pre>
+    <p>Removes specified remote repo.</p>
+    <h4>Fetch</h4>
+    <p>Updates local repositories from remote repos. These changes are not merged by default and must be merged manually. This allows you to pull down remote changes, inspect them, and then choose which changes to update locally. </p>
+    <pre><code>git fetch</code></pre>
+    <p>Will fetch from the remote repository tracked to the current branch.</p>
+    <pre><code>git fetch origin</code></pre>
+    <p>Copies all branches from the remote repo and stores them locally.</p>
+    <h3>Pull</h3>
+    <p>Similar to fetch except for the fact that remote objects are both downloaded and then merged into the local repository. This has the effect of automatically updating the local repository to match the remote, while fetch will download the files but not update your local copies.</p>
+    <pre><code>git pull</code></pre>
+    <p>Pulls the current remote repository and merges it.</p>
+    <pre><code>git pull origin &lt;branchname&gt;</code></pre>
+    <p>Pulls the remote branch specified and merges it.</p>
+    <h4>Clone</h4>
+    <p>Copies a repository into a new directory. Usually done to copy a remote directory locally. Unlike fetch, clone copies an entire repository and all its branches, and then sets up tracking for local and remote branches.</p>
+    <pre><code>git clone [url]</code></pre>
+    <p>Where URL points to the remote repository</p>
+    <pre><code>git clone -o [url] &lt;name&gt;</code></pre>
+    <p>Clones a remote repo and changes the named reference from &ldquo;origin&rdquo; to the one you specify.</p>
+    <pre><code>git clone -b [url]&nbsp; &lt;branch&gt;</code></pre>
+    <p>Clones the repo and checks out the named branch locally.</p>
+    <h4>Push</h4>
+    <p>Updates remote repos with local content.</p>
+    <pre><code>git push</code></pre>
+    <p>Pushes the current branch to the remote repository.</p>
+    <pre><code>git-push [remote] [branch]</code></pre>
+    <p>Pushes the contents of the specified branch to the remote&rsquo;s version of that branch.</p>
+    <pre><code>git push [remote] :[branch]</code></pre>
+Deletes the specified branch on the remote server.    </main>
+    <footer>
+    <p>&copy; James Williamson &amp; <a href="http://www.lynda.com" title="lynda.com">lynda.com</a></p>
+    <p class="license"><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Github for Web Designers</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.lynda.com" property="cc:attributionName" rel="cc:attributionURL">James Williamson</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="img"><br /><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
+    </footer>
+        <script>
+//use the modernizr load to load up external scripts. This will load the scripts asynchronously, but the order listed matters. Although it will load all scripts in parallel, it will execute them in the order listed
+Modernizr.load([
+{
+    load: [  
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
+		'_scripts/scripts.js' 
+		//additional scripts can be loaded here, separate with a comma in the order you wish them to execute 
+    ]
+},
+{
+	// test for media query support, if not load respond.js
+    test : Modernizr.mq('only all'),
+    // If not, load the respond.js file
+    nope : '_scripts/respond.min.js' 
+}
+]); 
+</script>
+    </body>
+</html>
